@@ -29,5 +29,10 @@ package coe528.project;
 
 
 public class Order {
+    private int itemnumber;
+    private double weight;
+    private Priority pri;
+
+
     
 }

@@ -19,5 +19,7 @@ package coe528.project;
  * 
  */
 public class Priority {
+    private Shipper ship;
+
     
 }
