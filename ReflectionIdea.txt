@@ -1,5 +1,16 @@
+//This is all an assumption. Not sure whats actually happening
+
+//This would determine which class we are dealing with based on user input String name
 Class c = Class.forName(name);
+
+//This makes a placeholder constructor based on the class (determined earlier)
+//It includes the potential parameters in the brackets, of course we shall change these
 Constructor ctor = c.getConstructor(Integer.class, Integer.class);
+
+//This is just sample code. Doesn't mean too much. For Testing purposes
 Integer param1 = hm.get("xPos") ...;
 Integer param2 = hm.get("yPos") ...;
+
+//This actually instantiates the object. 
 Object instanceOfTheClass = ctor.newInstance(param1, param2);
+//The "Object" can probably be changed
