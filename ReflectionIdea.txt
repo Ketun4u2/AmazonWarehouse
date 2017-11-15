@@ -1,0 +1,5 @@
+Class c = Class.forName(name);
+Constructor ctor = c.getConstructor(Integer.class, Integer.class);
+Integer param1 = hm.get("xPos") ...;
+Integer param2 = hm.get("yPos") ...;
+Object instanceOfTheClass = ctor.newInstance(param1, param2);
