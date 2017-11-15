@@ -18,5 +18,8 @@ package coe528.project;
  * 
  */
 public abstract class Shipper {
+
+    protected abstract String ShipRange();
+    protected abstract int toShip() ;
     
 }

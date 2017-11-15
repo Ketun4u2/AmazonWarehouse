@@ -11,7 +11,7 @@ import java.util.*;
  * @author k79patel
  */
 /*
- *Will Initialize and close the file
+ * Will Initialize and close the file
  * Hold all the orders
  * View the Logs
  * 
@@ -19,5 +19,11 @@ import java.util.*;
 
 public class Admin {
     protected static ArrayList<Order> Orders = new ArrayList<>();
+
+    protected void Initialize() {};
+    protected void Terminate() {};
+
+    protected void ViewLogs() {};
+
     
 }

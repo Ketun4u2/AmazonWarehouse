@@ -15,5 +15,10 @@ package coe528.project;
  * 
  */
 public class Customer {
+
+    protected void MakeOrder() {};
+    protected void ViewOrder() {};
+    protected void CancelOrder() {};
+
     
 }
