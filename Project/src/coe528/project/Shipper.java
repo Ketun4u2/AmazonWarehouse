@@ -17,9 +17,25 @@ package coe528.project;
  * Time to Ship
  * 
  */
-public interface Shipper {
+public abstract class Shipper {
 
-    String ShipRange();
-    int toShip() ;
-    
+    private String name ;
+    private String location;
+    private String time;
+    private String date;
+
+    protected Shipper() {}
+    protected Shipper(String name,String location) {
+        this.name = name;
+        this.location = location;
+    }
+    //What are the expected Shipping times?
+
+    protected String ShippingTimes() {
+        return null;
+    }
+
+    //Time for specific package
+    abstract protected int toShip();
+
 }

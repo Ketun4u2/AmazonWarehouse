@@ -22,7 +22,9 @@ public abstract class Priority {
     private Shipper ship;
 
     //The Constructor must include A shipper object in the constructor.
-    public Priority() {}
+    public Priority(Shipper ship) {
+        this.ship = ship;
+    }
 
     //Can the order be cancelled, real method
     protected abstract boolean cancel();
@@ -35,6 +37,10 @@ public abstract class Priority {
 
     protected void setShipper(Shipper ship) {
         this.ship = ship;
+    }
+
+    protected String Shipper() {
+        return ship.ShippingTimes();
     }
 
     //A Problem occurs here, by default we set the shippper to pending and thats fine. However, when we declare a shipper,

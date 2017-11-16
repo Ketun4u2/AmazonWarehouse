@@ -12,7 +12,7 @@ import java.util.*;
  * @author k79patel
  */
 public class Menu {
-    private static int i, j;
+    private static int i=1, j=1;
 
     public static void main(String[] args) {
         //Effects: The main function. Initializes the orders from file on start, then runs
@@ -20,6 +20,7 @@ public class Menu {
         // all the orders are saved to file and then program terminates.
         FileMang.Create();
         Admin.Initialize();
+        
         while (i != 0) {
             Welcome();
             i = FileMang.scan.nextInt();
@@ -46,7 +47,7 @@ public class Menu {
         System.out.println("Press 0 to exit");
         System.out.println("Press 1 if Customer");
         System.out.println("Press 2 if Employee");
-        System.out.println("Press 1 if Admin");
+        System.out.println("Press 3 if Admin");
         System.out.println("");
     }
 
