@@ -19,6 +19,7 @@ import java.util.*;
 
 public class Admin {
     protected static ArrayList<Order> Orders = new ArrayList<>();
+//    protected static ArrayList<>;
 
     protected static void Initialize() {};
     protected static void Terminate() {};

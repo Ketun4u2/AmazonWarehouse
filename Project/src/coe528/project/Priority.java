@@ -21,10 +21,22 @@ package coe528.project;
 public abstract class Priority {
     private Shipper ship;
 
+    //The Constructor must include A shipper object in the constructor.
+    public Priority() {}
+
+    //Can the order be cancelled, real method
     protected abstract boolean cancel();
+
+    //The Liabililty Cover, a show method
     protected abstract String liability() ;
+
+    //The return policy, a show method
     protected abstract String retrn();
-    
+
+    protected void setShipper(Shipper ship) {
+        this.ship = ship;
+    }
+
     //A Problem occurs here, by default we set the shippper to pending and thats fine. However, when we declare a shipper,
     //we have to do so with an object of the class. So lets say we want to make shipper "FedEx", then we have to make a new object
     //of type FedEx, and we have to set it through some method. 

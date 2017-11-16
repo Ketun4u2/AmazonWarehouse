@@ -5,6 +5,8 @@
 package coe528.project;
 
 import java.io.File;
+import java.lang.reflect.Constructor;
+import java.util.*;
 
 /**
  * @author k79patel
@@ -100,7 +102,7 @@ public class Menu {
         }
     }
 
-    protected void EmployeeMenu() {
+    protected static void EmployeeMenu() {
         //Requires:
         //Modifies:
         //Effects: Menu interface for Customers. The menu options lead to other
@@ -144,7 +146,7 @@ public class Menu {
     protected static void EmployeeLogin() {
         //Code that verifies Employee
         if (Login("Employee", "password")) {
-            EmployeeLogin();
+            EmployeeMenu();
         }
     }
 
@@ -162,6 +164,16 @@ public class Menu {
         System.out.println("Sorry, wrong info.");
 
         return false;
+    }
+
+    protected static Object Instantiate() throws Exception{
+        String name;
+
+        //System.out.println("Enter the name of class");
+        name = FileMang.scan.next();
+        Class c = Class.forName(name);
+        //Still gotta deal with the other stuff
+        return new Object();
     }
 
 

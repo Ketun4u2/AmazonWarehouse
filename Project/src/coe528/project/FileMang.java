@@ -71,8 +71,8 @@ public abstract class FileMang {
 
     public static void Create() {
         //Modifies: Orders file
-        //Effects: Creates a new Orders file with the default admin account
-        // if one doesn't alreay exist.
+        //Effects: Creates a new Orders file
+        // if one doesn't already exist.
         try {
             // Create the empty file with default permissions, etc.
             Files.createFile(file);
@@ -86,7 +86,7 @@ public abstract class FileMang {
     }
 
     public static void Reset() {
-        //Modifies: Banklogin file
+        //Modifies: Orders file
         //Effects: Clears the contents of the file.
         try {
             FileOutputStream writer = new FileOutputStream("./Orders.txt");

@@ -17,9 +17,9 @@ package coe528.project;
  * Time to Ship
  * 
  */
-public abstract class Shipper {
+public interface Shipper {
 
-    protected abstract String ShipRange();
-    protected abstract int toShip() ;
+    String ShipRange();
+    int toShip() ;
     
 }
