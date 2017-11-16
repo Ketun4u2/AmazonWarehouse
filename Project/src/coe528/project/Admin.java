@@ -20,10 +20,10 @@ import java.util.*;
 public class Admin {
     protected static ArrayList<Order> Orders = new ArrayList<>();
 
-    protected void Initialize() {};
-    protected void Terminate() {};
+    protected static void Initialize() {};
+    protected static void Terminate() {};
 
-    protected void ViewLogs() {};
+    protected static void ViewLogs() {};
 
     
 }

@@ -4,6 +4,8 @@
  */
 package coe528.project;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author k79patel
@@ -35,7 +37,7 @@ public class Order {
 	//The Important stuff for shipping. Weight can be changed, its not to important a factor, but we need something to
 	//make the actual shippers interesting and not just empty class shells.
 	private static int count;
-	private final int orderNumber;
+	private int orderNumber;
     private int itemNumber;
     private double weight;
     
@@ -52,7 +54,7 @@ public class Order {
     
     
     public Order(int itemnbr, double weight, String name, String location) {
-    	time = LocalDateTime.now();
+    	//time = LocalDateTime.now();
     	this.name = name;
     	this.location = location;
     	
@@ -62,7 +64,7 @@ public class Order {
     
     //An optional constructor with description
     public Order(int itemnbr, double wgt, String name, String location, String des) {
-    	Order(itemnbr, wgt, name, location);
+    	this(itemnbr, wgt, name, location);
     	Descrpt = des;
     }
 

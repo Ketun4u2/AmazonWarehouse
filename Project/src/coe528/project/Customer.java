@@ -16,9 +16,9 @@ package coe528.project;
  */
 public class Customer {
 
-    protected void MakeOrder() {};
-    protected void ViewOrder() {};
-    protected void CancelOrder() {};
+    protected static void MakeOrder() {};
+    protected static void ViewOrder() {};
+    protected static void CancelOrder() {};
 
     
 }
