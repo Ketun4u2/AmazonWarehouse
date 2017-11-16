@@ -5,6 +5,8 @@
 package coe528.project;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -34,41 +36,54 @@ import java.time.LocalDateTime;
 
 
 public class Order {
-    //The Important stuff for shipping. Weight can be changed, its not to important a factor, but we need something to
+    //The Important stuff for shipping. we need something to
     //make the actual shippers interesting and not just empty class shells.
     private static int count;
     private int orderNumber;
-    private int itemNumber;
-    private double weight;
 
-    //Just Extra stuff we could potentially play with.
-    private String time;
-    private String Descrpt;
-    private String name;
-    private String location;
+    private int itemNumber;         //Just for show.
+    //private double weight;
 
-    //The priority object, which will have the same problem described in the Priority.java file. Check the comments there. 
+    //Just Extra stuff we could potentially play with. Inner workings to make it cool and actually do something
+    private String time;            //Just a string representation of time, not necessary but makes life easy
+    private String Descrpt;          //optional
+    private String name;            //Required for show
+    private String location;        //Required for show
 
-    private Priority pri;
+    //We can use reflection to set priority later on by the employee.
+    private Priority pri;                 //IMPORTANT
+    private ZonedDateTime date;           //The variable that actually contains all date info
 
 
 
-    public Order(int itemnbr, double weight, String name, String location) {
-        //time = LocalDateTime.now();
+    public Order(int itemnbr, String name, String location, String pri) {
+        count++;
+        orderNumber = count;
         itemNumber =itemnbr;
-        this.weight = weight;
         this.name = name;
         this.location = location;
 
+        //To Set the Time
+        ZonedDateTime date = ZonedDateTime.now();
+        time  = DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm").format(date);
 
+        //Now to Initialize a concrete priority class based on the user input string.
+
+        System.out.println("Your order number is: " + orderNumber);
 
     }
 
     //An optional constructor with description
-    public Order(int itemnbr, double wgt, String name, String location, String des) {
-        this(itemnbr, wgt, name, location);
+    public Order(int itemnbr, String name, String location, String pri, String des) {
+        this(itemnbr, name, location, pri);
         Descrpt = des;
     }
+
+    protected String ShippingETA() {
+        //return the expected shipping time, provided by the
+        return null;
+    }
+
 
 
 

@@ -8,6 +8,7 @@ import java.io.File;
 import java.lang.reflect.Constructor;
 import java.util.*;
 
+
 /**
  * @author k79patel
  */
@@ -18,9 +19,11 @@ public class Menu {
         //Effects: The main function. Initializes the orders from file on start, then runs
         // an indefinite loop which gives access to the menu interface. Upon exit
         // all the orders are saved to file and then program terminates.
+
+
         FileMang.Create();
         Admin.Initialize();
-        
+
         while (i != 0) {
             Welcome();
             i = FileMang.scan.nextInt();
@@ -167,15 +170,6 @@ public class Menu {
         return false;
     }
 
-    protected static Object Instantiate() throws Exception{
-        String name;
-
-        //System.out.println("Enter the name of class");
-        name = FileMang.scan.next();
-        Class c = Class.forName(name);
-        //Still gotta deal with the other stuff
-        return new Object();
-    }
 
 
 }

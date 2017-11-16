@@ -1,12 +1,13 @@
 package coe528.project;
 
-public class StandardPri extends Priority {
+public class Standard extends Priority {
 
-    public StandardPri(Shipper ship) {
+    public Standard(Shipper ship) {
         super(ship);
     }
 
     @Override
+    //Make sure item is not shipped otherwise we can't return
     protected boolean cancel() {
         return true;
     }
@@ -18,6 +19,6 @@ public class StandardPri extends Priority {
 
     @Override
     protected String retrn() {
-        return "Standard Shipping Charges for returns";
+        return "Standard Shipping Charges for Returns";
     }
 }
