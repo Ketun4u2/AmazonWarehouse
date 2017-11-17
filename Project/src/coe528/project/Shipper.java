@@ -4,6 +4,8 @@
  */
 package coe528.project;
 
+import java.time.*;
+
 /**
  *
  * @author k79patel
@@ -18,24 +20,32 @@ package coe528.project;
  * 
  */
 public abstract class Shipper {
+    //Requires: All subclasses declare a value for ExpShip
+    protected int ExpShip;                   //The shipping time for the provider. Very Important
 
     private String name ;
     private String location;
-    private String time;
-    private String date;
 
-    protected Shipper() {}
+    private ZonedDateTime Shiptime;         //Set on instantiation
+    private ZonedDateTime Arritime;         //Shiptime + ExpTime to Ship
+
+
     protected Shipper(String name,String location) {
         this.name = name;
         this.location = location;
+        Shiptime = ZonedDateTime.now();
+        Arritime = Shiptime;
+        Arritime.plusHours(ExpShip);
     }
-    //What are the expected Shipping times?
 
-    protected String ShippingTimes() {
-        return null;
-    }
+    //What are the expected Shipping times? Just a
+    abstract protected String ShippingTimes() ;
 
     //Time for specific package
-    abstract protected int toShip();
+    protected ZonedDateTime ETA() {
+        return Arritime;
+    }
+
+
 
 }

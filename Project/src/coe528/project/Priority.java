@@ -4,6 +4,8 @@
  */
 package coe528.project;
 
+import java.time.*;
+
 /**
  *
  * @author k79patel
@@ -20,6 +22,8 @@ package coe528.project;
  */
 public abstract class Priority {
     private Shipper ship;
+    private boolean shipped;
+
 
     //The Constructor must include A shipper object in the constructor.
     public Priority(Shipper ship) {
@@ -37,9 +41,10 @@ public abstract class Priority {
 
     protected void setShipper(Shipper ship) {
         this.ship = ship;
+        shipped = true;
     }
 
-    protected String Shipper() {
+    protected String ExpectedTA() {
         return ship.ShippingTimes();
     }
 

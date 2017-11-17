@@ -14,7 +14,7 @@ public class Standard extends Priority {
 
     @Override
     protected String liability() {
-        return "Default Coverage of $100";
+        return "Standard Coverage of $100";
     }
 
     @Override
