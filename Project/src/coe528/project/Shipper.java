@@ -5,6 +5,7 @@
 package coe528.project;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -45,14 +46,13 @@ public abstract class Shipper {
 
     //What are the expected Shipping times? Just a String Representation
     //Just a general representation, should be static in the concrete class
-    protected static String ShippingTimes() {
-        return "Is this the wrong one";
-    }
+    abstract protected String ShippingTimes() ;
 
 
     //The actual Time for specific package
-    protected ZonedDateTime ETA() {
-        return Arritime;
+    protected String ETA() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy  HH:00");
+        return (Arritime.format(dtf));
     }
 
 

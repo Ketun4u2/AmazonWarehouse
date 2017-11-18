@@ -8,7 +8,7 @@ public class Pending extends Shipper {
         super(name, location, ExpShip);
     }
 
-    protected static String ShippingTimes() {
+    protected String ShippingTimes() {
         return "Pending";
     }
 

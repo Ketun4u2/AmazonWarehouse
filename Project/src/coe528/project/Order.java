@@ -83,6 +83,10 @@ public class Order {
         return pri.ShippingTimes();
     }
 
+    protected String ETA() {
+        return pri.ETA();
+    }
+
 
     protected void setPri(Priority pri) {
         this.pri = pri;

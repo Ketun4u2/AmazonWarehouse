@@ -23,7 +23,8 @@ public class Menu {
 
         Order test = new Order(232, "Hacc", "SampleAdr", "Standard");
         test.setPri(new Standard(new CanadaPost("Hacc", "SampleAdr")));
-        test.ShippingTimes();
+        System.out.println(test.ShippingTimes());
+        System.out.println(test.ETA());
 
         FileMang.Create();
         Admin.Initialize();

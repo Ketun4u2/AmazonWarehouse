@@ -5,7 +5,7 @@
 package coe528.project;
 
 import java.time.*;
-
+import java.time.format.*;
 /**
  *
  * @author k79patel
@@ -48,6 +48,10 @@ public abstract class Priority {
     //This is erronous
     protected String ShippingTimes() {
         return ship.ShippingTimes();
+    }
+
+    protected String ETA() {
+        return ship.ETA();
     }
 
 

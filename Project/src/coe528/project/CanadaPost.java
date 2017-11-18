@@ -8,7 +8,9 @@ public class CanadaPost extends Shipper {
         super(name, location, ExpShip);
     }
 
-    protected static String ShippingTimes() {
+    protected String ShippingTimes() {
         return "5 Days Shipping";
     }
+
+
 }

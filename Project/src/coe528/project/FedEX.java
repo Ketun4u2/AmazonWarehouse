@@ -7,7 +7,7 @@ public class FedEX extends Shipper {
         super(name, location, ExpShip);
     }
 
-    protected static String ShippingTimes() {
+    protected String ShippingTimes() {
         return "2 to 3 Days Shipping";
     }
 }
