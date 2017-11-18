@@ -2,17 +2,15 @@ package coe528.project;
 
 public class Pending extends Shipper {
 
-    protected int ExpShip = 3;
+    private static int ExpShip = 360; //Just meant to be longest time for shipping.
 
     protected Pending(String name, String location) {
-        super(name, location);
+        super(name, location, ExpShip);
     }
 
-    protected String ShippingTimes() {
+    protected static String ShippingTimes() {
         return "Pending";
     }
-
-
 
 
 }

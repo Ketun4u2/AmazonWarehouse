@@ -79,12 +79,14 @@ public class Order {
         Descrpt = des;
     }
 
-    protected String ShippingETA() {
-        //return the expected shipping time, provided by the
-        return null;
+    protected String ShippingTimes() {
+        return pri.ShippingTimes();
     }
 
 
+    protected void setPri(Priority pri) {
+        this.pri = pri;
+    }
 
 
 

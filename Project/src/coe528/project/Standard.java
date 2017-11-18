@@ -9,7 +9,8 @@ public class Standard extends Priority {
     @Override
     //Make sure item is not shipped otherwise we can't return
     protected boolean cancel() {
-        return true;
+        if(!this.shipped) return true;
+        return false;
     }
 
     @Override

@@ -21,7 +21,7 @@ import java.time.*;
  */
 public abstract class Shipper {
     //Requires: All subclasses declare a value for ExpShip
-    protected int ExpShip;                   //The shipping time for the provider. Very Important
+    protected int ExpShip = 0;                   //The shipping time for the provider. Very Important
 
     private String name ;
     private String location;
@@ -35,13 +35,22 @@ public abstract class Shipper {
         this.location = location;
         Shiptime = ZonedDateTime.now();
         Arritime = Shiptime;
-        Arritime.plusHours(ExpShip);
     }
 
-    //What are the expected Shipping times? Just a
-    abstract protected String ShippingTimes() ;
+    protected Shipper(String name, String location, int ExpS) {
+        this(name, location);
+        Arritime.plusHours(ExpS);
 
-    //Time for specific package
+    }
+
+    //What are the expected Shipping times? Just a String Representation
+    //Just a general representation, should be static in the concrete class
+    protected static String ShippingTimes() {
+        return "Is this the wrong one";
+    }
+
+
+    //The actual Time for specific package
     protected ZonedDateTime ETA() {
         return Arritime;
     }

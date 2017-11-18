@@ -12,6 +12,7 @@ import java.util.*;
 /**
  * @author k79patel
  */
+
 public class Menu {
     private static int i=1, j=1;
 
@@ -20,6 +21,9 @@ public class Menu {
         // an indefinite loop which gives access to the menu interface. Upon exit
         // all the orders are saved to file and then program terminates.
 
+        Order test = new Order(232, "Hacc", "SampleAdr", "Standard");
+        test.setPri(new Standard(new CanadaPost("Hacc", "SampleAdr")));
+        test.ShippingTimes();
 
         FileMang.Create();
         Admin.Initialize();
