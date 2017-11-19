@@ -5,8 +5,10 @@
 package coe528.project;
 
 
+import java.lang.reflect.Constructor;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 /**
  *
@@ -79,9 +81,6 @@ public class Order {
         Descrpt = des;
     }
 
-    protected String ShippingTimes() {
-        return pri.ShippingTimes();
-    }
 
     protected String ETA() {
         return pri.ETA();
@@ -90,6 +89,26 @@ public class Order {
 
     protected void setPri(Priority pri) {
         this.pri = pri;
+    }
+/*
+    //This should take a string and instantiate it. but that's for later implementation if time permits
+    protected void setShi(Shipper ship) {
+        //create an object based on string input
+        Shipper test = new Pending(name, location);
+        pri.setShipper(test);
+    }
+*/
+    protected void setShip(String name) {
+        try {
+            Class c = Class.forName(name);
+            System.out.println(c.getCanonicalName());
+            Constructor ctor = c.getConstructor(String.class, String.class);
+            Shipper instance = (Shipper) ctor.newInstance(name,location);
+            pri.setShipper(instance);
+        } catch (Exception e) {
+            System.out.println("Sorry, this class probably doesn't exist. But here's the details:");
+            System.err.println(e);
+        }
     }
 
 

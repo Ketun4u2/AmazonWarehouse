@@ -29,32 +29,38 @@ public abstract class Shipper {
 
     private ZonedDateTime Shiptime;         //Set on instantiation
     private ZonedDateTime Arritime;         //Shiptime + ExpTime to Ship
-
-
+/*
     protected Shipper(String name,String location) {
         this.name = name;
         this.location = location;
         Shiptime = ZonedDateTime.now();
         Arritime = Shiptime;
-    }
+    } */
 
     protected Shipper(String name, String location, int ExpS) {
-        this(name, location);
-        Arritime.plusHours(ExpS);
-
+        this.name = name;
+        this.location = location;
+        Shiptime = ZonedDateTime.now();
+        Arritime = Shiptime;
+        Arritime.plusHours((long)ExpS);
     }
-
-    //What are the expected Shipping times? Just a String Representation
-    //Just a general representation, should be static in the concrete class
-    abstract protected String ShippingTimes() ;
-
 
     //The actual Time for specific package
     protected String ETA() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy  HH:00");
-        return (Arritime.format(dtf));
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy  HH:00");
+        return (dtf.format(Arritime));
     }
 
 
 
 }
+
+    //Extras
+
+//What are the expected Shipping times? Just a String Representation
+//Just a general representation, should be static in the concrete class
+//abstract static shippingtimes()
+//Of course java doesn't allow abstract static methods, so everyone should just know
+//that the children need a concrete implementation of this.
+
+

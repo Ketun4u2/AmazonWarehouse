@@ -4,11 +4,6 @@
  */
 package coe528.project;
 
-import java.io.File;
-import java.lang.reflect.Constructor;
-import java.util.*;
-
-
 /**
  * @author k79patel
  */
@@ -22,8 +17,9 @@ public class Menu {
         // all the orders are saved to file and then program terminates.
 
         Order test = new Order(232, "Hacc", "SampleAdr", "Standard");
-        test.setPri(new Standard(new CanadaPost("Hacc", "SampleAdr")));
-        System.out.println(test.ShippingTimes());
+        test.setPri(new Standard());
+        System.out.println(test.ETA());
+        test.setShip("CanadaPost");
         System.out.println(test.ETA());
 
         FileMang.Create();

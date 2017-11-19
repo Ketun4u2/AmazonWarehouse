@@ -21,14 +21,14 @@ import java.time.format.*;
  * 
  */
 public abstract class Priority {
-    private Shipper ship;
+    protected Shipper ship;
     protected boolean shipped;
-    private boolean canc;
+    protected boolean canc;   //Handled by the child classes
 
 
     //The Constructor must include A shipper object in the constructor.
-    public Priority(Shipper ship) {
-        this.ship = ship;
+    public Priority() {
+        shipped = false;
     }
 
     //Can the order be cancelled, real method
@@ -45,13 +45,15 @@ public abstract class Priority {
         shipped = true;
     }
 
-    //This is erronous
-    protected String ShippingTimes() {
-        return ship.ShippingTimes();
-    }
+    //These two methods, ShippingTimes and ETA, are almost redundant.
+    //The idea was ShippingTimes was to see an average estimate for shipping
+    //While ETA estimated time of arrival.
 
     protected String ETA() {
-        return ship.ETA();
+        if(ship!=null) {
+            return ship.ETA();
+        }
+        return "Pending";
     }
 
 

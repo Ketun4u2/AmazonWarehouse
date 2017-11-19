@@ -1,9 +1,12 @@
 package coe528.project;
 
 public class Standard extends Priority {
+    //Allows canceling the order before it is shipped.
 
-    public Standard(Shipper ship) {
-        super(ship);
+
+    public Standard() {
+      super();
+      super.canc = true;
     }
 
     @Override
@@ -11,6 +14,11 @@ public class Standard extends Priority {
     protected boolean cancel() {
         if(!this.shipped) return true;
         return false;
+    }
+
+    protected void setShipper(Shipper ship) {
+        super.setShipper(ship);
+        this.canc = false;
     }
 
     @Override
