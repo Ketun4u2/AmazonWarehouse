@@ -5,7 +5,7 @@
 package coe528.project;
 
 
-import java.lang.reflect.Constructor;
+import java.lang.reflect.*;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -99,14 +99,17 @@ public class Order {
     }
 */
     protected void setShip(String name) {
+        name = "coe528.project." + name;
         try {
             Class c = Class.forName(name);
-            System.out.println(c.getCanonicalName());
-            Constructor ctor = c.getConstructor(String.class, String.class);
-            Shipper instance = (Shipper) ctor.newInstance(name,location);
+
+            Constructor<?> ctor = CanadaPost.class.getConstructor(String.class, String.class);
+
+            Shipper instance = (Shipper) ctor.newInstance(this.name,location);
+
             pri.setShipper(instance);
         } catch (Exception e) {
-            System.out.println("Sorry, this class probably doesn't exist. But here's the details:");
+            System.out.println("Sorry, something happened. But here's the details:");
             System.err.println(e);
         }
     }

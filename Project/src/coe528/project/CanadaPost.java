@@ -4,6 +4,10 @@ public class CanadaPost extends Shipper {
 
     protected static int ExpShip = 120;
 
+    protected CanadaPost() {
+        this("Test","Sample");
+    }
+
     protected CanadaPost(String name, String location) {
         super(name, location, ExpShip);
     }

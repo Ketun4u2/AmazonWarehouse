@@ -9,7 +9,7 @@ package coe528.project;
  */
 
 public class Menu {
-    private static int i=1, j=1;
+    private static int i=0, j=1;
 
     public static void main(String[] args) {
         //Effects: The main function. Initializes the orders from file on start, then runs
