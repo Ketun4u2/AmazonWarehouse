@@ -4,8 +4,8 @@
  */
 package coe528.project;
 
-import java.time.*;
-import java.time.format.DateTimeFormatter;
+import java.util.*;
+
 
 /**
  *
@@ -21,34 +21,33 @@ import java.time.format.DateTimeFormatter;
  * 
  */
 public abstract class Shipper {
-    //Requires: All subclasses declare a value for ExpShip
-    protected int ExpShip = 0;                   //The shipping time for the provider. Very Important
+    //Requires: All subclasses declare a value for ExpShip. This is the
+    //Shipping times of the provide. Very Important
+    protected int ExpShip = 0;   
+    
+    private GregorianCalendar shiptime;
+    private GregorianCalendar arritime;
 
-    private String name ;
-    private String location;
+    private String name ;           //A Show Variable
+    private String location;        //Another Show
 
-    private ZonedDateTime Shiptime;         //Set on instantiation
-    private ZonedDateTime Arritime;         //Shiptime + ExpTime to Ship
-/*
-    protected Shipper(String name,String location) {
-        this.name = name;
-        this.location = location;
-        Shiptime = ZonedDateTime.now();
-        Arritime = Shiptime;
-    } */
 
     protected Shipper(String name, String location, int ExpS) {
         this.name = name;
         this.location = location;
-        Shiptime = ZonedDateTime.now();
-        Arritime = Shiptime;
-        Arritime.plusHours((long)ExpS);
+        
+        shiptime = new GregorianCalendar();
+        arritime = shiptime;
+        arritime.add(GregorianCalendar.HOUR, ExpS);
+        
     }
 
     //The actual Time for specific package
     protected String ETA() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy  HH:00");
-        return (dtf.format(Arritime));
+        Date date = arritime.getTime();
+        date.setSeconds(0);
+        date.setMinutes(0);
+        return "" + date;
     }
 
 
