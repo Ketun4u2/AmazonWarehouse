@@ -6,8 +6,6 @@ package coe528.project;
 
 
 import java.lang.reflect.*;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -48,15 +46,14 @@ public class Order {
 
     //Just Extra stuff we could potentially play with. Inner workings to make it cool and actually do something
     private String time;            //Just a string representation of time, not necessary but makes life easy
-    private String Descrpt;          //optional
+    private String Descrpt;         //optional
     private String name;            //Required for show
     private String location;        //Required for show
-
-    //We can use reflection to set priority later on by the employee.
+    
+    private Date date;              //The Date
+    
     private Priority pri;                 //IMPORTANT
-    private ZonedDateTime date;           //The variable that actually contains all date info
-
-
+  
 
     public Order(int itemnbr, String name, String location, String pri) {
         count++;
@@ -64,12 +61,10 @@ public class Order {
         itemNumber =itemnbr;
         this.name = name;
         this.location = location;
+        
+        date = new Date();
 
-        //To Set the Time
-        ZonedDateTime date = ZonedDateTime.now();
-        time  = DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm").format(date);
-
-        //Now to Initialize a concrete priority class based on the user input string.
+        this.setPri(pri);
 
         System.out.println("Your order number is: " + orderNumber);
 
@@ -82,40 +77,38 @@ public class Order {
     }
 
 
-    protected String ETA() {
-        return pri.ETA();
-    }
-
-
-    protected void setPri(Priority pri) {
-        this.pri = pri;
-    }
-/*
-    //This should take a string and instantiate it. but that's for later implementation if time permits
-    protected void setShi(Shipper ship) {
-        //create an object based on string input
-        Shipper test = new Pending(name, location);
-        pri.setShipper(test);
-    }
-*/
-    protected void setShip(String name) {
+    protected void setPri(String name) {
         name = "coe528.project." + name;
         try {
             Class c = Class.forName(name);
-
-            Constructor<?> ctor = CanadaPost.class.getConstructor(String.class, String.class);
-
-            Shipper instance = (Shipper) ctor.newInstance(this.name,location);
-
-            pri.setShipper(instance);
+            Constructor<?> ctor = c.getConstructor();
+            Priority instance = (Priority) ctor.newInstance();
+            this.pri = instance;
+           
         } catch (Exception e) {
             System.out.println("Sorry, something happened. But here's the details:");
             System.err.println(e);
         }
     }
 
-
-
+    protected void setShip(String name) {
+        name = "coe528.project." + name;
+        try {
+            Class c = Class.forName(name);
+            Constructor<?> ctor = c.getConstructor(String.class, String.class);
+            Shipper instance = (Shipper) ctor.newInstance(this.name,location);
+            pri.setShipper(instance);
+            
+        } catch (Exception e) {
+            System.out.println("Sorry, something happened. But here's the details:");
+            System.err.println(e);
+        }
+    }
+    
+    
+    protected String ETA() {
+        return pri.ETA();
+    }
 
 
 }
