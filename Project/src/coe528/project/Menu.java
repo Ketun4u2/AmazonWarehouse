@@ -17,10 +17,10 @@ public class Menu {
         // all the orders are saved to file and then program terminates.
 
         Order test = new Order(232, "Hacc", "SampleAdr", "Standard");
-        test.setPri(new Standard());
         System.out.println(test.ETA());
         test.setShip("CanadaPost");
         System.out.println(test.ETA());
+        
 
         FileMang.Create();
         Admin.Initialize();
