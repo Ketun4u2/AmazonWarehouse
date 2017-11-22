@@ -20,6 +20,7 @@ public class Menu {
         System.out.println(test.ETA());
         test.setShip("CanadaPost");
         System.out.println(test.ETA());
+        test.ShippingDetails();
         
 
         FileMang.Create();

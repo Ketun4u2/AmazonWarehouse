@@ -36,54 +36,49 @@ import java.util.*;
 
 
 public class Order {
-    //The Important stuff for shipping. we need something to
-    //make the actual shippers interesting and not just empty class shells.
+
     private static int count;
     private int orderNumber;
 
-    private int itemNumber;         //Just for show.
-    //private double weight;
+    private int itemNumber;
 
-    //Just Extra stuff we could potentially play with. Inner workings to make it cool and actually do something
-    private String time;            //Just a string representation of time, not necessary but makes life easy
-    private String Descrpt;         //optional
     private String name;            //Required for show
     private String location;        //Required for show
+
+    private String pri;             //Will be used to store to file
+    private String shi;             //Will be used to store to file
     
     private Date date;              //The Date
     
-    private Priority pri;                 //IMPORTANT
+    private Priority priority;                 //IMPORTANT
   
 
     public Order(int itemnbr, String name, String location, String pri) {
         count++;
         orderNumber = count;
         itemNumber =itemnbr;
+        this.pri = pri;
+        shi = "Pending";
         this.name = name;
         this.location = location;
         
         date = new Date();
 
-        this.setPri(pri);
+        this.setPriority(pri);
+        this.setShip("Pending");
 
         System.out.println("Your order number is: " + orderNumber);
 
     }
 
-    //An optional constructor with description
-    public Order(int itemnbr, String name, String location, String pri, String des) {
-        this(itemnbr, name, location, pri);
-        Descrpt = des;
-    }
 
-
-    protected void setPri(String name) {
+    protected void setPriority(String name) {
         name = "coe528.project." + name;
         try {
             Class c = Class.forName(name);
             Constructor<?> ctor = c.getConstructor();
             Priority instance = (Priority) ctor.newInstance();
-            this.pri = instance;
+            this.priority = instance;
            
         } catch (Exception e) {
             System.out.println("Sorry, something happened. But here's the details:");
@@ -92,12 +87,13 @@ public class Order {
     }
 
     protected void setShip(String name) {
+        shi = name;
         name = "coe528.project." + name;
         try {
             Class c = Class.forName(name);
             Constructor<?> ctor = c.getConstructor(String.class, String.class);
             Shipper instance = (Shipper) ctor.newInstance(this.name,location);
-            pri.setShipper(instance);
+            priority.setShipper(instance);
             
         } catch (Exception e) {
             System.out.println("Sorry, something happened. But here's the details:");
@@ -107,7 +103,26 @@ public class Order {
     
     
     protected String ETA() {
-        return pri.ETA();
+        return priority.ETA();
+    }
+    
+    protected String ShipmentCreated() {
+        return priority.ShipmentCreated();
+    }
+    
+        //An indepth Shipping Report
+    protected void ShippingDetails() {
+        System.out.println("Order Date: " + date);
+        System.out.println("Item #" + itemNumber);
+        System.out.println("Name: " + name);
+        System.out.println("Address: " + location);
+        System.out.println("Shipping Priority: " + priority.getClass());
+        
+        
+        System.out.println("Shipment Provider: ");
+        System.out.println("Shipment Created: " + ShipmentCreated());
+        System.out.println("Expected Delivery Date: " + ETA());
+        
     }
 
 

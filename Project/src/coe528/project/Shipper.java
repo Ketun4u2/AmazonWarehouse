@@ -49,6 +49,11 @@ public abstract class Shipper {
         date.setMinutes(0);
         return "" + date;
     }
+    
+    
+    protected String ShipmentCreated() {
+        return "" + shiptime.getTime();
+    }
 
 
 

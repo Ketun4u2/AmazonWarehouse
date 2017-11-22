@@ -49,7 +49,14 @@ public abstract class Priority {
         if(ship!=null) {
             return ship.ETA();
         }
-        return "Pending";
+        return "Shipment Pending";
+    }
+    
+    protected String ShipmentCreated() {
+        if(ship!=null) {
+            return ship.ShipmentCreated();
+        } 
+        return "Shipment Pending";
     }
 
 
