@@ -108,6 +108,24 @@ public class Order {
     
     protected String ShipmentCreated() {
         return priority.ShipmentCreated();
+<<<<<<< HEAD
+=======
+    }
+    
+        //An indepth Shipping Report
+    protected void ShippingDetails() {
+        System.out.println("Order Date: " + date);
+        System.out.println("Item #" + itemNumber);
+        System.out.println("Name: " + name);
+        System.out.println("Address: " + location);
+
+        System.out.println("Shipping Priority: " + priority.priorityName());
+        System.out.println("Shipment Provider: " + priority.shipperName());
+
+        System.out.println("Shipment Created: " + ShipmentCreated());
+        System.out.println("Expected Delivery Date: " + ETA());
+        
+>>>>>>> master
     }
     
         //An indepth Shipping Report
