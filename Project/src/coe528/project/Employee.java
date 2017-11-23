@@ -16,7 +16,9 @@ package coe528.project;
 public class Employee {
 
     protected static void PendingOrders() {};
+    
     protected static void ViewShippers() {}
+    
     protected static void CreateShipment() {};
 
 }

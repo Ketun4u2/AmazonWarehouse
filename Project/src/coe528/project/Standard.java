@@ -23,6 +23,11 @@ public class Standard extends Priority {
     }
 
     @Override
+    protected String priorityName() {
+        return "Standard";
+    }
+
+    @Override
     protected String liability() {
         return "Standard Coverage of $100";
     }

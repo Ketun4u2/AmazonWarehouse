@@ -36,6 +36,7 @@ public abstract class Shipper {
         this.name = name;
         this.location = location;
         
+        
         shiptime = new GregorianCalendar();
         arritime = shiptime;
         arritime.add(GregorianCalendar.HOUR, ExpS);
@@ -49,6 +50,13 @@ public abstract class Shipper {
         date.setMinutes(0);
         return "" + date;
     }
+    
+    
+    protected String ShipmentCreated() {
+        return "" + shiptime.getTime();
+    }
+
+    protected abstract String shipperName();
 
 
 

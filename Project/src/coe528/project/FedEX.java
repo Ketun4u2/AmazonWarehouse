@@ -3,8 +3,13 @@ package coe528.project;
 public class FedEX extends Shipper {
     protected int ExpShip = 60;
 
-    protected FedEX(String name, String location, int ExpShip) {
+    public FedEX(String name, String location, int ExpShip) {
         super(name, location, ExpShip);
+    }
+
+    @Override
+    protected String shipperName() {
+        return "FedEX";
     }
 
     protected static String ShippingTimes() {
