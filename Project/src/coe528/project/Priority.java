@@ -46,8 +46,9 @@ public abstract class Priority {
 
     //Returns Expected Time to Arrival
     protected String ETA() {
-        if(ship!=null) {
+        if((ship!=null)) {
             return ship.ETA();
+
         }
         return "Shipment Pending";
     }
@@ -57,6 +58,12 @@ public abstract class Priority {
             return ship.ShipmentCreated();
         } 
         return "Shipment Pending";
+    }
+
+    protected abstract String priorityName();
+
+    protected String shipperName() {
+        return ship.shipperName();
     }
 
 

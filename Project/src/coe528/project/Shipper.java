@@ -55,6 +55,8 @@ public abstract class Shipper {
         return "" + shiptime.getTime();
     }
 
+    protected abstract String shipperName();
+
 
 
 }

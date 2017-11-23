@@ -116,10 +116,10 @@ public class Order {
         System.out.println("Item #" + itemNumber);
         System.out.println("Name: " + name);
         System.out.println("Address: " + location);
-        System.out.println("Shipping Priority: " + priority.getClass());
-        
-        
-        System.out.println("Shipment Provider: ");
+
+        System.out.println("Shipping Priority: " + priority.priorityName());
+        System.out.println("Shipment Provider: " + priority.shipperName());
+
         System.out.println("Shipment Created: " + ShipmentCreated());
         System.out.println("Expected Delivery Date: " + ETA());
         

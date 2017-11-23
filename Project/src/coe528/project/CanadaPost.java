@@ -12,5 +12,8 @@ public class CanadaPost extends Shipper {
         return "5 Days Shipping";
     }
 
+    protected String shipperName() {
+        return "CanadaPost";
+    }
 
 }

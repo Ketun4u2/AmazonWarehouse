@@ -9,7 +9,16 @@ public class Pending extends Shipper {
     }
 
     protected static String ShippingTimes() {
-        return "Pending";
+        return "Shipment Pending";
     }
 
+    @Override
+    protected String ETA() {
+        return "Shipment Pending";
+    }
+
+    @Override
+    protected String shipperName() {
+        return "Pending";
+    }
 }
