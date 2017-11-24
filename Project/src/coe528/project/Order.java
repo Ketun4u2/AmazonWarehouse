@@ -73,6 +73,7 @@ public class Order {
 
 
     protected void setPriority(String name) {
+        pri = name;
         name = "coe528.project." + name;
         try {
             Class c = Class.forName(name);
@@ -101,41 +102,36 @@ public class Order {
         }
     }
     
+    protected int getOrderNumber() {            //Returns Order Number
+        return orderNumber;
+    }
     
-    protected String ETA() {
+    protected String getPriority() {            //Returns Prioirty Name
+        return pri;
+    }
+    
+    protected String getShipper() {             //Returns Shipper Name
+        return shi;
+    }
+    
+    protected String canCancel() {              //Can the Order be Cancelled
+        priority.canCancel();   
+    }
+    
+    protected String ETA() {                            //ETA to Delivery
         return priority.ETA();
     }
     
-    protected String ShipmentCreated() {
+    protected String ShipmentCreated() {                //Date Shipment Created
         return priority.ShipmentCreated();
-<<<<<<< HEAD
-=======
     }
     
-        //An indepth Shipping Report
-    protected void ShippingDetails() {
-        System.out.println("Order Date: " + date);
-        System.out.println("Item #" + itemNumber);
-        System.out.println("Name: " + name);
-        System.out.println("Address: " + location);
-
-        System.out.println("Shipping Priority: " + priority.priorityName());
-        System.out.println("Shipment Provider: " + priority.shipperName());
-
-        System.out.println("Shipment Created: " + ShipmentCreated());
-        System.out.println("Expected Delivery Date: " + ETA());
         
->>>>>>> master
-    }
-    
-        //An indepth Shipping Report
-    protected void ShippingDetails() {
+    protected void ShippingDetails() {                      //An indepth Shipping Report
         System.out.println("Order Date: " + date);
         System.out.println("Item #" + itemNumber);
         System.out.println("Name: " + name);
         System.out.println("Address: " + location);
-        //Make a status method so we check if the customer can cancel an order or not. If shipped then no cancel.
-        //System.out.println("Order Status: " + status);
 
         System.out.println("Shipping Priority: " + priority.priorityName());
         System.out.println("Shipment Provider: " + priority.shipperName());
