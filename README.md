@@ -12,3 +12,6 @@ JUnit Test Cases (Done Last Preferably) 				    - K2N
 
 To Add: 
 - 
+
+Check this out:
+https://www.journaldev.com/1789/java-reflection-example-tutorial#reflection-class
