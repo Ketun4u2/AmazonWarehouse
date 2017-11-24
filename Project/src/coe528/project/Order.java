@@ -115,7 +115,7 @@ public class Order {
     }
     
     protected String canCancel() {              //Can the Order be Cancelled
-        priority.canCancel();   
+        return priority.canCancel();   
     }
     
     protected String ETA() {                            //ETA to Delivery
