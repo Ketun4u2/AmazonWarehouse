@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class Customer {
     
-    private static String s;
+    private static String s, oNum;
     private static int i;
     
     private static String userInput(){
@@ -43,7 +43,11 @@ public class Customer {
         name = userInput();
         System.out.println("Please enter shipping location:");
         location = userInput();
-        System.out.println("Please enter shipping priority:");
+        System.out.println("Please enter shipping priority from below:");
+        System.out.println("SameDay");
+        System.out.println("2Days");
+        System.out.println("Standard");
+        System.out.println("Free");
         pri = userInput();
         
         //Create a new order
@@ -70,6 +74,7 @@ public class Customer {
 
     protected static void CancelOrder() {
         int OrderNum;
+        
         //Ask them for Order Number
         System.out.println("Please enter your order number:");
         OrderNum = userInputInt();  //FileMang.scan.nextInt();  Only enter int values 
@@ -77,8 +82,9 @@ public class Customer {
         //Search for the Order Number
         for(Order o:Admin.Orders) {
             if(o.getOrderNumber == OrderNum) {
+                oNum = o.getOrderStatus();
                 //Need a method to check order status.
-                //if(o.getOrderStatus == "Pending"){
+                //if(oNum.equalsIgnoreCase("Pending")){
                 //  Admin.Orders.remove(o);
                 //  System.out.println("Your order has been canceled.");
                 //}

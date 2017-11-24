@@ -24,7 +24,11 @@ public class Admin {
     protected static void Initialize() {};
     protected static void Terminate() {};
 
-    protected static void ViewLogs() {};
+    protected static void ViewLogs() {
+        System.out.println("------------ List of Pending Orders ------------");
+        Employee.PendingOrders();
+        System.out.println("------------ List of Shipped Orders ------------");
+    }
 
     protected static Object Instantiate() throws Exception{
         String name;
