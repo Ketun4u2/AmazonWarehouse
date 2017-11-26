@@ -17,7 +17,15 @@ public class CasesTest {
     
     /**
      * Test of setPriority method, of class Order.
-     * Given a valid Case
+     * This class requires the String input to be one of the priorities,
+     * so Boundary conditions with null String and one character String
+     * is out of the question.
+     * 
+     * Test Cases: It Works
+     *             It Doesn't Work
+     *              
+     * 
+     * Below is a valid Case (It Works):
      */
     @Test
     public void testSetPriority() {

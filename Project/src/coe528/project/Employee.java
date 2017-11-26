@@ -25,21 +25,10 @@ public class Employee {
     /**
      * OVERVIEW:
      */
-    private static String s, ship;
-    private static int i, orNum;
+    private static Scanner input = new Scanner(System.in);
+    private static String ship;
+    private static int orNum;
     
-    private static String userInput(){
-        Scanner user_input = new Scanner(System.in); 
-        s = user_input.next();
-        return s;
-    }
-
-    private static int userInputInt() {
-        Scanner user_input = new Scanner(System.in);
-        i = user_input.nextInt();
-        return i;
-    }
-
     protected static void PendingOrders() {
         /**
         * REQUIRES:
@@ -145,14 +134,14 @@ public class Employee {
             
             System.out.println("Enter Order Number:");
             System.out.println("When done type 000 to exit.");
-            orNum = userInputInt(); 
+            orNum = input.nextInt();
             if (orNum == 000) {
                 break;
             }
             for(Order o:Admin.Orders) {
                 if(o.getOrderNumber() == orNum) {
                     System.out.println("Enter Shipping Company:");
-                    ship = userInput();
+                    ship = input.next();
                     o.setShip(ship);
                 }
             }
