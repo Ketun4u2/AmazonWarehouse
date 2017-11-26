@@ -16,8 +16,12 @@ import java.util.*;
  * View the Logs
  * 
  */
+ 
 
 public class Admin {
+    /**
+     * OVERVIEW:
+     */
     protected static ArrayList<Order> Orders = new ArrayList<>();
 //    protected static ArrayList<>;
 

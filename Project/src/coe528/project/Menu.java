@@ -9,10 +9,22 @@ import java.util.*;
 /**
  * @author k79patel
  */
+ /**
+ * REQUIRES:
+ * MODIFIES:
+ * EFFECTS:
+ */
 
 public class Menu {
+
     private static int i=1, j=1;
     private static Scanner scan = new Scanner(System.in);
+
+    /**
+     * OVERVIEW:
+     */
+    //private static int i=0, j=1;
+
 
     public static void main(String[] args) {
         //Effects: The main function. Initializes the orders from file on start, then runs

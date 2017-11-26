@@ -36,7 +36,9 @@ import java.util.*;
 
 
 public class Order {
-
+    /**
+     * OVERVIEW:
+     */
     private static int count;
     private int orderNumber;
 
@@ -54,6 +56,11 @@ public class Order {
 
 
     public Order(int itemnbr, String name, String location, String pri) {
+        /**
+        * REQUIRES:
+        * MODIFIES:
+        * EFFECTS:
+        */
         count++;
         orderNumber = count;
         itemNumber =itemnbr;
@@ -72,7 +79,7 @@ public class Order {
     }
 
 
-    protected void setPriority(String name) {
+    protected void setPriority(String name) {     
         pri = name;
         name = "coe528.project." + name;
         try {
@@ -127,7 +134,13 @@ public class Order {
     }
     
         
-    protected void ShippingDetails() {                      //An indepth Shipping Report
+    protected void ShippingDetails() {  
+        /**
+        * REQUIRES:
+        * MODIFIES:
+        * EFFECTS:
+        */
+ 
         System.out.println("Order Date: " + date);
         System.out.println("Item #" + itemNumber);
         System.out.println("Name: " + name);

@@ -16,7 +16,16 @@ import java.util.Scanner;
  * Cancel Order
  * 
  */
+ /**
+ * REQUIRES:
+ * MODIFIES:
+ * EFFECTS:
+ */
+
 public class Customer {
+     /**
+     * OVERVIEW:
+     */
     
     private static String s, oNum;
     private static int i;
@@ -34,6 +43,12 @@ public class Customer {
     }
 
     protected static void MakeOrder() {
+        /**
+        * REQUIRES:
+        * MODIFIES:
+        * EFFECTS:
+        */
+        
         int itemNum;
         String name, location, pri;
         //Display UI to create an order by customer
@@ -58,21 +73,30 @@ public class Customer {
     
     
     protected static void ViewOrder() {
-        int OrderNum;
-        //Ask them for Order Number
-        System.out.println("Please enter your order number:");
-        OrderNum = userInputInt();  //FileMang.scan.nextInt();  Only enter int values 
+        /**
+        * REQUIRES:
+        * MODIFIES:
+        * EFFECTS:
+        */
         
-        //Search for the Order Number
+        int OrderNum;
+        System.out.println("Please enter your order number:");
+        OrderNum = userInputInt();  
+        
         for(Order o:Admin.Orders) {
             if(o.getOrderNumber() == OrderNum) {
-                //Continue
                 o.ShippingDetails();
             }
         }
     }
 
     protected static void CancelOrder() {
+        /**
+        * REQUIRES:
+        * MODIFIES:
+        * EFFECTS:
+        */
+        
         int OrderNum;
         
         //Ask them for Order Number
@@ -84,13 +108,13 @@ public class Customer {
             if(o.getOrderNumber() == OrderNum) {
                 oNum = o.getShipper();
                 //Need a method to check order status.
-                //if(oNum.equalsIgnoreCase("Pending")){
-                //  Admin.Orders.remove(o);
-                //  System.out.println("Your order has been canceled.");
-                //}
-                //else{
-                //  System.out.println("We appologies but your order cannt be canceled. It is already in transit and should arrive by:" + o.ETA());
-                //} 
+                if(oNum.equalsIgnoreCase("Pending")){
+                  Admin.Orders.remove(o);
+                  System.out.println("Your order has been canceled.");
+                }
+                else{
+                  System.out.println("We appologies but your order cannt be canceled. It is already in transit and should arrive by:" + o.ETA());
+                } 
             }
         } 
     }

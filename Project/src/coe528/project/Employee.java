@@ -15,12 +15,21 @@ import java.util.Scanner;
  *
  * MAKE getOrderNumber and getPriority
  */
-public class Employee {
-    private static String s, ship;
-    private static int i;
+ /**
+ * REQUIRES:
+ * MODIFIES:
+ * EFFECTS:
+ */
 
-    private static String userInput() {
-        Scanner user_input = new Scanner(System.in);
+public class Employee {
+    /**
+     * OVERVIEW:
+     */
+    private static String s, ship;
+    private static int i, orNum;
+    
+    private static String userInput(){
+        Scanner user_input = new Scanner(System.in); 
         s = user_input.next();
         return s;
     }
@@ -32,7 +41,13 @@ public class Employee {
     }
 
     protected static void PendingOrders() {
+        /**
+        * REQUIRES:
+        * MODIFIES:
+        * EFFECTS:
+        */
         String oPri, oStat;
+
         System.out.println("Shipping Priority: Same Day");
         for (Order o : Admin.Orders) {
             oStat = o.getShipper();
@@ -59,7 +74,6 @@ public class Employee {
         System.out.println("Shipping Priority: Standard");
         for (Order o : Admin.Orders) {
             oStat = o.getShipper();
-
             if (oStat.equalsIgnoreCase("Pending")) {
                 oPri = o.getPriority();
                 if (oPri.equalsIgnoreCase("Standard")) {
@@ -67,6 +81,7 @@ public class Employee {
                 }
             }
         }
+
 
         System.out.println("Shipping Priority: Free");
         for (Order o : Admin.Orders) {
@@ -78,30 +93,70 @@ public class Employee {
                     System.out.println("Order Number:" + o.getOrderNumber());
                 }
             }
-        }
-    }
-
+        }       
+    }            
     protected static void ViewShippers() {
-
+        /**
+        * REQUIRES:
+        * MODIFIES:
+        * EFFECTS:
+        */
+        String oPri1, oStat1; 
+        
         System.out.println("Shipping Company: FedEx");
-
-        System.out.println("Shipping Company: CanadaPost");
-
+        for(Order o:Admin.Orders) {
+            oStat1 = o.getShipper();
+                      
+            if(oStat1.equalsIgnoreCase("FedEx")){
+                oPri1 = o.getPriority();
+                System.out.println("Order Number:" + o.getOrderNumber());       
+            }
+        }
+        
+        System.out.println("Shipping Company: Canada Post");
+        for(Order o:Admin.Orders) {
+            oStat1 = o.getShipper();
+                      
+            if(oStat1.equalsIgnoreCase("CanadaPost")){
+                oPri1 = o.getPriority();
+                System.out.println("Order Number:" + o.getOrderNumber());   
+            }
+        }
+        
         System.out.println("Shipping Company: UPS");
+        for(Order o:Admin.Orders) {
+            oStat1 = o.getShipper();
+                      
+            if(oStat1.equalsIgnoreCase("UPS")){
+                oPri1 = o.getPriority();
+                System.out.println("Order Number:" + o.getOrderNumber());   
+            }
+        }
 
     }
 
     protected static void CreateShipment() {
-
-        System.out.println("Enter Shipping Company:");
-        ship = userInput();
-
-        if (ship.equalsIgnoreCase("FedEx")) {
-            System.out.println("Enter Shipping Company:");
+        /**
+        * REQUIRES:
+        * MODIFIES:
+        * EFFECTS:
+        */
+        while(true) {
+            
+            System.out.println("Enter Order Number:");
+            System.out.println("When done type 000 to exit.");
+            orNum = userInputInt(); 
+            if (orNum == 000) {
+                break;
+            }
+            for(Order o:Admin.Orders) {
+                if(o.getOrderNumber() == orNum) {
+                    System.out.println("Enter Shipping Company:");
+                    ship = userInput();
+                    o.setShip(ship);
+                }
+            }
         }
-
     }
-
-
-
 }
+
