@@ -54,7 +54,7 @@ public abstract class Priority {
     }
     
     protected String ShipmentCreated() {        //Date Shipment was Created
-        if(ship!=null) {
+        if((ship!=null)&&!(ship.getClass().equals("Pending"))) {
             return ship.ShipmentCreated();
         } 
         return "Shipment Pending";

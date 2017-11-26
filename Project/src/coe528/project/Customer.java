@@ -82,7 +82,7 @@ public class Customer {
         //Search for the Order Number
         for(Order o:Admin.Orders) {
             if(o.getOrderNumber() == OrderNum) {
-                oNum = o.getOrderStatus();
+                oNum = o.getShipper();
                 //Need a method to check order status.
                 //if(oNum.equalsIgnoreCase("Pending")){
                 //  Admin.Orders.remove(o);

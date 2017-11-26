@@ -11,7 +11,7 @@ import java.util.*;
  */
 
 public class Menu {
-    private static int i=0, j=1;
+    private static int i=1, j=1;
     private static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {

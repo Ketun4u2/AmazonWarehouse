@@ -35,7 +35,7 @@ public class Employee {
         String oPri, oStat;
         System.out.println("Shipping Priority: Same Day");
         for (Order o : Admin.Orders) {
-            oStat = o.getOrderStatus();
+            oStat = o.getShipper();
 
             if (oStat.equalsIgnoreCase("Pending")) {
                 oPri = o.getPriority();
@@ -46,7 +46,7 @@ public class Employee {
         }
         System.out.println("Shipping Priority: 2 Days");
         for (Order o : Admin.Orders) {
-            oStat = o.getOrderStatus();
+            oStat = o.getShipper();
 
             if (oStat.equalsIgnoreCase("Pending")) {
                 oPri = o.getPriority();
@@ -58,7 +58,7 @@ public class Employee {
 
         System.out.println("Shipping Priority: Standard");
         for (Order o : Admin.Orders) {
-            oStat = o.getOrderStatus();
+            oStat = o.getShipper();
 
             if (oStat.equalsIgnoreCase("Pending")) {
                 oPri = o.getPriority();
@@ -70,7 +70,7 @@ public class Employee {
 
         System.out.println("Shipping Priority: Free");
         for (Order o : Admin.Orders) {
-            oStat = o.getOrderStatus;
+            oStat = o.getShipper();
 
             if (oStat.equalsIgnoreCase("Pending")) {
                 oPri = o.getPriority();
@@ -101,5 +101,7 @@ public class Employee {
         }
 
     }
+
+
 
 }
