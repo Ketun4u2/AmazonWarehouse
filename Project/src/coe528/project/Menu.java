@@ -22,6 +22,7 @@ public class Menu {
 
     /**
      * OVERVIEW:
+     * @param args
      */
     //private static int i=0, j=1;
 
@@ -40,8 +41,7 @@ public class Menu {
         test.ShippingDetails();
         
 
-      //  FileMang.Create();
-        Admin.Initialize();
+
 
         while (i != 0) {
             Welcome();
@@ -58,7 +58,7 @@ public class Menu {
                     break;
             }
         }
-        Admin.Terminate();
+
 
     }
 

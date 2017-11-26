@@ -25,8 +25,6 @@ public class Admin {
     protected static ArrayList<Order> Orders = new ArrayList<>();
 //    protected static ArrayList<>;
 
-    protected static void Initialize() {};
-    protected static void Terminate() {};
 
     protected static void ViewLogs() {
         System.out.println("------------ List of Pending Orders ------------");

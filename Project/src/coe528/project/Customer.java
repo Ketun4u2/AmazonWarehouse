@@ -26,20 +26,20 @@ public class Customer {
      /**
      * OVERVIEW:
      */
-    
+  //  private static Scanner input = new Scanner(System.in);
     private static String s, oNum;
     private static int i;
-    
+
     private static String userInput(){
-        Scanner user_input = new Scanner(System.in); 
+        Scanner user_input = new Scanner(System.in);
         s = user_input.next();
-        return s; 
+        return s;
     }
-      
+
     private static int userInputInt(){
-        Scanner user_input = new Scanner(System.in); 
+        Scanner user_input = new Scanner(System.in);
         i = user_input.nextInt();
-        return i; 
+        return i;
     }
 
     protected static void MakeOrder() {

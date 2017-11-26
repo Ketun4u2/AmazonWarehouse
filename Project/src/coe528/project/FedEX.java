@@ -1,9 +1,9 @@
 package coe528.project;
 
 public class FedEX extends Shipper {
-    protected int ExpShip = 60;
+    protected static int ExpShip = 60;
 
-    public FedEX(String name, String location, int ExpShip) {
+    public FedEX(String name, String location) {
         super(name, location, ExpShip);
     }
 

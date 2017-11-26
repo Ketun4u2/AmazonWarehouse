@@ -5,6 +5,7 @@
  */
 package coe528.project;
 
+import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -23,6 +24,7 @@ public class OrderTest {
     
     @BeforeClass
     public static void setUpClass() {
+        Order test = new Order(255, "SampleName", "SampleAdr", "Standard");
     }
     
     @AfterClass
@@ -36,6 +38,12 @@ public class OrderTest {
     @After
     public void tearDown() {
     }
+    
+    
+    @Test
+    public void constructor() {
+      
+    }
 
     /**
      * Test of setPriority method, of class Order.
@@ -43,9 +51,9 @@ public class OrderTest {
     @Test
     public void testSetPriority() {
         System.out.println("setPriority");
-        String name = "";
-        Order instance = null;
-        instance.setPriority(name);
+        String name = "coe528.project.Standard";
+        
+        instance.setPriority("");
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

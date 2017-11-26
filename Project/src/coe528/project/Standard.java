@@ -5,21 +5,16 @@ public class Standard extends Priority {
 
     public Standard() {
         super();
-        super.canc = true;
     }
 
     @Override
     protected boolean cancel() {
-        if (!this.shipped) {
-            return true;
-        }
-        return false;
+        return !(ship.shipperName().equals("Pending"));
     }
 
     @Override
     protected void setShipper(Shipper ship) {
         super.setShipper(ship);
-        this.canc = false;
     }
 
     @Override
