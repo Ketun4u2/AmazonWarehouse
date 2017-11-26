@@ -16,15 +16,10 @@ import java.util.Scanner;
  * Cancel Order
  * 
  */
- /**
- * REQUIRES:
- * MODIFIES:
- * EFFECTS:
- */
 
 public class Customer {
      /**
-     * OVERVIEW:
+     * OVERVIEW: This class provides with all the methods for customer to create a new order and view the status of their previous order.
      */
   //  private static Scanner input = new Scanner(System.in);
     private static String s, oNum;
@@ -44,9 +39,9 @@ public class Customer {
 
     protected static void MakeOrder() {
         /**
-        * REQUIRES:
-        * MODIFIES:
-        * EFFECTS:
+        * REQUIRES: item number, name, location, and priority provided by the user. 
+        * MODIFIES: creates new order object
+        * EFFECTS: it takes all the information and then creates a new order object for the customer. 
         */
         
         int itemNum;
@@ -74,9 +69,9 @@ public class Customer {
     
     protected static void ViewOrder() {
         /**
-        * REQUIRES:
+        * REQUIRES: int order number 
         * MODIFIES:
-        * EFFECTS:
+        * EFFECTS: takes the order number and searches for it and prints out all its details. 
         */
         
         int OrderNum;
@@ -92,9 +87,9 @@ public class Customer {
 
     protected static void CancelOrder() {
         /**
-        * REQUIRES:
-        * MODIFIES:
-        * EFFECTS:
+        * REQUIRES: int order number 
+        * MODIFIES: order object, deletes it
+        * EFFECTS: takes the order number and deletes it from the arraylist. 
         */
         
         int OrderNum;

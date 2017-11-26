@@ -19,6 +19,9 @@ package coe528.project;
  * 
  */
 public abstract class Priority {
+    /**
+     * OVERVIEW: This abstract class provides all the parameters of priority of the order.  
+     */
 
     protected Shipper ship;     //The Aggregation making the bridge
 
@@ -42,6 +45,11 @@ public abstract class Priority {
     }
     
     protected String ETA() {                    //Returns Expected Time to Arrival
+        /**
+        * REQUIRES:   
+        * MODIFIES: 
+        * EFFECTS: Returns the expected time of arrival of order. 
+        */
         if ((ship != null)) {
             return ship.ETA();
         }
@@ -49,6 +57,11 @@ public abstract class Priority {
     }
 
     protected String ShipmentCreated() {        //Date Shipment was Created
+        /**
+        * REQUIRES:   
+        * MODIFIES: 
+        * EFFECTS: Returns the status that shipment is pending if the order hasn't been shipped otherwise it gives order created date.
+        */
         if (shipperName().equals("Pending")) {
             return "Shipment Pending";
         }
@@ -57,6 +70,11 @@ public abstract class Priority {
     }
 
     protected String shipmentStatus() {
+        /**
+        * REQUIRES:   
+        * MODIFIES: 
+        * EFFECTS: Returns the status that shipment is pending if the order hasn't been shipped otherwise it says Shipped. 
+        */
         if (ship.getClass().equals("Pending")) {
             return "Shipment Pending";
         }

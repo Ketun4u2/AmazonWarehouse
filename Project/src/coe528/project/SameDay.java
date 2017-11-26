@@ -1,6 +1,9 @@
 package coe528.project;
 
 public class SameDay extends Priority {
+    /**
+     * OVERVIEW: This class extends priority and holds the relevant information for SameDay shipping including liability and cancellation.  
+     */
     //Allows canceling the order before it is shipped.
 
     public SameDay() {

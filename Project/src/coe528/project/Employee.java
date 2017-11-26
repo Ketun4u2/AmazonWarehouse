@@ -15,15 +15,10 @@ import java.util.Scanner;
  *
  * MAKE getOrderNumber and getPriority
  */
- /**
- * REQUIRES:
- * MODIFIES:
- * EFFECTS:
- */
 
 public class Employee {
     /**
-     * OVERVIEW:
+     * OVERVIEW: This class provides all the functions for employee like viewing pending orders and then assigning their shipper appropriately. 
      */
     private static Scanner input = new Scanner(System.in);
     private static String ship;
@@ -33,7 +28,7 @@ public class Employee {
         /**
         * REQUIRES:
         * MODIFIES:
-        * EFFECTS:
+        * EFFECTS: Returns all the pending orders to be shipped in a sorted manner under their priority. 
         */
         String oPri, oStat;
 
@@ -88,7 +83,7 @@ public class Employee {
         /**
         * REQUIRES:
         * MODIFIES:
-        * EFFECTS:
+        * EFFECTS: Just displays the available shipping methods for employee to see. 
         */
         String oPri1, oStat1; 
         
@@ -126,9 +121,9 @@ public class Employee {
 
     protected static void CreateShipment() {
         /**
-        * REQUIRES:
-        * MODIFIES:
-        * EFFECTS:
+        * REQUIRES: int Order number provided by the user.
+        * MODIFIES: shipper of the specific orders 
+        * EFFECTS: Takes the order numbers and changes their shipper variable with the shipping method.
         */
         while(true) {
             

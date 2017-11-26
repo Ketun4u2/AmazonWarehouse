@@ -21,6 +21,9 @@ import java.util.*;
  * 
  */
 public abstract class Shipper {
+    /**
+     * OVERVIEW: This abstract class states all the methods required for each shipping company and it assigns each order its shipping company. 
+     */
     //Requires: All subclasses declare a value for ExpShip. This is the
     //Shipping times of the provide. Very Important
     protected int ExpShip = 0;   
@@ -33,6 +36,10 @@ public abstract class Shipper {
 
 
     protected Shipper(String name, String location, int ExpS) {
+        /**
+        * REQUIRES: name and location have to be string and Exps to be a positive number.
+        * EFFECTS: Assigns each value to its appropriate variable and add its to the order object. 
+        */
         this.name = name;
         this.location = location;
         
@@ -45,6 +52,11 @@ public abstract class Shipper {
 
     //The actual Time for specific package
     protected String ETA() {
+        /**
+        * REQUIRES:   
+        * MODIFIES: 
+        * EFFECTS: Returns the expected delivery time. 
+        */
         Date date = arritime.getTime();
         date.setSeconds(0);
         date.setMinutes(0);

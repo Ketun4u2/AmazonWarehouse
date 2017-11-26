@@ -37,7 +37,7 @@ import java.util.*;
 
 public class Order {
     /**
-     * OVERVIEW:
+     * OVERVIEW: Provides a basic structure for orders and all its parameters. 
      */
     private static int count;
     private int orderNumber;
@@ -57,9 +57,8 @@ public class Order {
 
     public Order(int itemnbr, String name, String location, String pri) {
         /**
-        * REQUIRES:
-        * MODIFIES:
-        * EFFECTS:
+        * REQUIRES: name, location and pri all have to be string and itemnbr to be a positive number.
+        * EFFECTS: Takes all the required inputs from the customer and assigns them to their respective parameter and returns an order number.
         */
         count++;
         orderNumber = count;
@@ -79,7 +78,11 @@ public class Order {
     }
 
 
-    protected void setPriority(String name) {     
+    protected void setPriority(String name) { 
+         /**
+        * REQUIRES: name must be a string chosen from four types of priority available. 
+        * EFFECTS: Takes the given priority and assigns it to that specific order. 
+        */
         pri = name;
         name = "coe528.project." + name;
         try {
@@ -95,6 +98,10 @@ public class Order {
     }
 
     protected void setShip(String name) {
+        /**
+        * REQUIRES: name must be a string chosen from three types of shipping companies available. 
+        * EFFECTS: Replaces the default the given shipper from default to the new shipper assigned by the employee.
+        */
         shi = name;
         name = "coe528.project." + name;
         try {
@@ -136,9 +143,7 @@ public class Order {
         
     protected void ShippingDetails() {  
         /**
-        * REQUIRES:
-        * MODIFIES:
-        * EFFECTS:
+        * EFFECTS: Combines all the information of a specific order and prints it. 
         */
  
         System.out.println("Order Date: " + date);

@@ -20,7 +20,7 @@ import java.util.*;
 
 public class Admin {
     /**
-     * OVERVIEW:
+     * OVERVIEW: Maintains and holds the arraylist of orders and lets the employee and customer access it. 
      */
     protected static ArrayList<Order> Orders = new ArrayList<>();
 //    protected static ArrayList<>;
