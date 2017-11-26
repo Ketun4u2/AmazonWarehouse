@@ -65,9 +65,9 @@ public class Customer {
         
         //Search for the Order Number
         for(Order o:Admin.Orders) {
-            if(o.getOrderNumber == OrderNum) {
+            if(o.getOrderNumber() == OrderNum) {
                 //Continue
-                Admin.Order[o].ShippingDetails();
+                o.ShippingDetails();
             }
         }
     }
@@ -81,7 +81,7 @@ public class Customer {
         
         //Search for the Order Number
         for(Order o:Admin.Orders) {
-            if(o.getOrderNumber == OrderNum) {
+            if(o.getOrderNumber() == OrderNum) {
                 oNum = o.getOrderStatus();
                 //Need a method to check order status.
                 //if(oNum.equalsIgnoreCase("Pending")){

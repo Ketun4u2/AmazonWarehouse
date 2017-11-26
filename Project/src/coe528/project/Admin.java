@@ -30,16 +30,4 @@ public class Admin {
         System.out.println("------------ List of Shipped Orders ------------");
     }
 
-    protected static Object Instantiate() throws Exception{
-        String name;
-
-        //System.out.println("Enter the name of class");
-        name = FileMang.scan.next();
-        Class c = Class.forName(name);
-        //Still gotta deal with the other stuff
-        return new Object();
-    }
-
-    
-
 }

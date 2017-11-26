@@ -4,12 +4,15 @@
  */
 package coe528.project;
 
+import java.util.*;
+
 /**
  * @author k79patel
  */
 
 public class Menu {
     private static int i=0, j=1;
+    private static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
         //Effects: The main function. Initializes the orders from file on start, then runs
@@ -25,12 +28,12 @@ public class Menu {
         test.ShippingDetails();
         
 
-        FileMang.Create();
+      //  FileMang.Create();
         Admin.Initialize();
 
         while (i != 0) {
             Welcome();
-            i = FileMang.scan.nextInt();
+            i = scan.nextInt();
             switch (i) {
                 case 1:
                     CustomerMenu();
@@ -73,7 +76,7 @@ public class Menu {
             System.out.println("Press 1 to Make Order");
             System.out.println("Press 2 to View Order");
             System.out.println("");
-            j = FileMang.scan.nextInt();
+            j = scan.nextInt();
             switch (j) {
                 case 1:
                     Customer.MakeOrder();
@@ -100,12 +103,11 @@ public class Menu {
             System.out.println("Press 0 to Exit ");
             System.out.println("Press 1 to View Order Logs");
             System.out.println("");
-            j = FileMang.scan.nextInt();
+            j = scan.nextInt();
             switch (j) {
                 case 1:
                     Admin.ViewLogs();
                     break;
-
             }
         }
     }
@@ -126,7 +128,7 @@ public class Menu {
             System.out.println("Press 2 to View Shipping Providers");
             System.out.println("Press 3 to Create Shipment");
             System.out.println("");
-            j = FileMang.scan.nextInt();
+            j = scan.nextInt();
             switch (j) {
                 case 1:
                     //Code to View all pending orders
@@ -161,9 +163,9 @@ public class Menu {
     protected static boolean Login(String ur, String ps) {
         String user, pass;
         System.out.println("Please Enter Username:");
-        user = FileMang.scan.next();
+        user = scan.next();
         System.out.println("Please Enter Password");
-        pass = FileMang.scan.next();
+        pass = scan.next();
 
         if (user.equals(ur) && pass.equals(ps)) {
             return true;
@@ -173,7 +175,4 @@ public class Menu {
 
         return false;
     }
-
-
-
 }

@@ -24,28 +24,28 @@ public abstract class Priority {
     protected boolean canc;     //Handled by the child classes
 
 
-    //The Constructor must include A shipper object in the constructor.
+
     public Priority() {
         shipped = false;
-    }
+    }       //The Constructor must include A shipper object in the constructor.
 
-    //Can the order be cancelled, real method
-    protected abstract boolean cancel();
 
-    //The Liabililty Cover, a show method
-    protected abstract String liability() ;
+    protected abstract boolean cancel();        //Can the order be cancelled, real method
 
-    //The return policy, a show method
-    protected abstract String retrn();
 
-    //Setting a Shipper 
-    protected void setShipper(Shipper ship) {
+    protected abstract String liability() ;     //The Liabililty Cover, a show method
+
+
+    protected abstract String retrn();          //The return policy, a show method
+
+
+    protected void setShipper(Shipper ship) {   //Setting a Shipper
         this.ship = ship;
         shipped = true;
     }
 
-    //Returns Expected Time to Arrival
-    protected String ETA() {
+
+    protected String ETA() {                    //Returns Expected Time to Arrival
         if((ship!=null)) {
             return ship.ETA();
 
@@ -53,17 +53,25 @@ public abstract class Priority {
         return "Shipment Pending";
     }
     
-    protected String ShipmentCreated() {
+    protected String ShipmentCreated() {        //Date Shipment was Created
         if(ship!=null) {
             return ship.ShipmentCreated();
         } 
         return "Shipment Pending";
     }
 
-    protected abstract String priorityName();
+    protected abstract String priorityName();      //Name of the priority
 
-    protected String shipperName() {
+    protected String shipperName() {                //Name of Shipment Provider
         return ship.shipperName();
+    }
+
+    protected String shipmentStatus() {
+        if(ship.getClass().equals("Pending")) {
+            return "Shipment Pending";
+        }
+
+        return "Shipped";
     }
 
 

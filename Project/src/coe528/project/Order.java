@@ -51,7 +51,7 @@ public class Order {
     private Date date;              //The Date
     
     private Priority priority;                 //IMPORTANT
-  
+
 
     public Order(int itemnbr, String name, String location, String pri) {
         count++;
@@ -114,8 +114,8 @@ public class Order {
         return shi;
     }
     
-    protected String canCancel() {              //Can the Order be Cancelled
-        return priority.canCancel();   
+    protected boolean canCancel() {              //Can the Order be Cancelled
+        return priority.cancel();
     }
     
     protected String ETA() {                            //ETA to Delivery
