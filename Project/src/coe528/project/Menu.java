@@ -21,17 +21,6 @@ public class Menu {
         // an indefinite loop which gives access to the menu interface. Upon exit
         // all the orders are saved to file and then program terminates.
 
-        Order test = new Order(232, "Hacc", "SampleAdr", "Standard");
-        System.out.println(test.ETA());
-        test.setShip("CanadaPost");
-        System.out.println(test.ETA());
-        System.out.println(" ");
-        System.out.println(" ");
-        test.ShippingDetails();
-        
-
-
-
         while (i != 0) {
             Welcome();
             i = scan.nextInt();

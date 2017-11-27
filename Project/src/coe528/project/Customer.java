@@ -24,18 +24,7 @@ public class Customer {
   //  private static Scanner input = new Scanner(System.in);
     private static String s, oNum;
     private static int i;
-
-    private static String userInput(){
-        Scanner user_input = new Scanner(System.in);
-        s = user_input.next();
-        return s;
-    }
-
-    private static int userInputInt(){
-        Scanner user_input = new Scanner(System.in);
-        i = user_input.nextInt();
-        return i;
-    }
+    private static Scanner input = new Scanner(System.in);
 
     protected static void MakeOrder() {
         /**
@@ -48,17 +37,17 @@ public class Customer {
         String name, location, pri;
         //Display UI to create an order by customer
         System.out.println("Please enter your item number:");
-        itemNum = userInputInt();
+        itemNum = input.nextInt();
         System.out.println("Please enter customer name:");
-        name = userInput();
+        name = input.next();
         System.out.println("Please enter shipping location:");
-        location = userInput();
+        location = input.next();
         System.out.println("Please enter shipping priority from below:");
         System.out.println("SameDay");
         System.out.println("2Days");
         System.out.println("Standard");
         System.out.println("Free");
-        pri = userInput();
+        pri = input.next();
         
         //Create a new order
         Order order = new Order(itemNum, name, location, pri);       
@@ -76,13 +65,15 @@ public class Customer {
         
         int OrderNum;
         System.out.println("Please enter your order number:");
-        OrderNum = userInputInt();  
+        OrderNum = input.nextInt();
         
         for(Order o:Admin.Orders) {
             if(o.getOrderNumber() == OrderNum) {
                 o.ShippingDetails();
+                return;
             }
         }
+        System.out.println("Sorry, the order probably doesn't exist");
     }
 
     protected static void CancelOrder() {
@@ -96,7 +87,7 @@ public class Customer {
         
         //Ask them for Order Number
         System.out.println("Please enter your order number:");
-        OrderNum = userInputInt();  //FileMang.scan.nextInt();  Only enter int values 
+        OrderNum = input.nextInt();  //FileMang.scan.nextInt();  Only enter int values 
         
         //Search for the Order Number
         for(Order o:Admin.Orders) {
@@ -109,9 +100,12 @@ public class Customer {
                 else{
                   System.out.println("We appologize but your order cannot be cancelled.");
                   System.out.println("If you are not satisfied you can always return the item");
+                  return;
                 } 
             }
-        } 
+        }
+        System.out.println("Sorry, the order probably doesn't exist");
+
     }
 
 }
