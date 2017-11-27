@@ -49,7 +49,7 @@ public class Employee {
 
             if (oStat.equalsIgnoreCase("Pending")) {
                 oPri = o.getPriority();
-                if (oPri.equalsIgnoreCase("2Days")) {
+                if (oPri.equalsIgnoreCase("TwoDays")) {
                     System.out.println("Order Number:" + o.getOrderNumber());
                 }
             }
