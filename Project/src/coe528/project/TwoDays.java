@@ -13,7 +13,7 @@ package coe528.project;
     /**
      * OVERVIEW: This class extends priority and holds the relevant information for 2Days shipping including liability and cancellation.  
      */
-    //Allows canceling the order before it is shipped.
+    //Does not allow cancelling of Order.
 
     public TwoDays() {
         super();

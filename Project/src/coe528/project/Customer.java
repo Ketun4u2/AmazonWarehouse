@@ -89,7 +89,7 @@ public class Customer {
         /**
         * REQUIRES: int order number 
         * MODIFIES: order object, deletes it
-        * EFFECTS: takes the order number and deletes it from the arraylist. 
+        * EFFECTS: takes the order number and deletes the order from the arraylist, if possible. 
         */
         
         int OrderNum;
@@ -101,14 +101,14 @@ public class Customer {
         //Search for the Order Number
         for(Order o:Admin.Orders) {
             if(o.getOrderNumber() == OrderNum) {
-                oNum = o.getShipper();
-                //Need a method to check order status.
-                if(oNum.equalsIgnoreCase("Pending")){
+                if(o.canCancel()){
                   Admin.Orders.remove(o);
                   System.out.println("Your order has been canceled.");
+                  return;
                 }
                 else{
-                  System.out.println("We appologies but your order cannt be canceled. It is already in transit and should arrive by:" + o.ETA());
+                  System.out.println("We appologize but your order cannot be cancelled.");
+                  System.out.println("If you are not satisfied you can always return the item");
                 } 
             }
         } 

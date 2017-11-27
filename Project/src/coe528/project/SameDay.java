@@ -4,7 +4,7 @@ public class SameDay extends Priority {
     /**
      * OVERVIEW: This class extends priority and holds the relevant information for SameDay shipping including liability and cancellation.  
      */
-    //Allows canceling the order before it is shipped.
+    //Does not allow cancelling the Order before shipment. 
 
     public SameDay() {
         super();

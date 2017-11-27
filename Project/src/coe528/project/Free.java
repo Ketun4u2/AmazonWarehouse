@@ -21,7 +21,7 @@ package coe528.project;
 
     @Override
     protected boolean cancel() {
-        return false;
+        return ship.shipperName().equals("Pending");
     }
 
     @Override

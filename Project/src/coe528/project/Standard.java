@@ -12,7 +12,7 @@ public class Standard extends Priority {
 
     @Override
     protected boolean cancel() {
-        return !(ship.shipperName().equals("Pending"));
+        return ship.shipperName().equals("Pending");
     }
 
     @Override

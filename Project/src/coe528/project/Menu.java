@@ -76,6 +76,7 @@ public class Menu {
             System.out.println("Press 0 to Exit ");
             System.out.println("Press 1 to Make Order");
             System.out.println("Press 2 to View Order");
+            System.out.println("Press 3 to Cancel Order");
             System.out.println("");
             j = scan.nextInt();
             switch (j) {
@@ -84,6 +85,9 @@ public class Menu {
                     break;
                 case 2:
                     Customer.ViewOrder();
+                    break;
+                case 3:
+                    Customer.CancelOrder();
                     break;
             }
         }
