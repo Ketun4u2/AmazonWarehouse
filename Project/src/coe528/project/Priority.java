@@ -7,17 +7,8 @@ package coe528.project;
 /**
  *
  * @author k79patel
- */
-/*
- * Actual Use:
- * Cancel Policy
- * 
- * For Show:
- * Liability
- * Return
- * Price
- * 
- */
+*/
+
 public abstract class Priority {
     /**
      * OVERVIEW: This abstract class provides all the parameters of priority of the order.  
@@ -27,11 +18,11 @@ public abstract class Priority {
 
     public Priority() {}      
 
-    protected abstract boolean cancel();        //Can the order be cancelled, real method
+    protected abstract boolean cancel();        //Can the order be cancelled
 
-    protected abstract String liability();     //The Liabililty Cover, a show method
+    protected abstract String liability();     //The Liabililty Policy
 
-    protected abstract String retrn();          //The return policy, a show method
+    protected abstract String retrn();          //The return policy
     
     protected abstract String priorityName();      //Name of the priority
 

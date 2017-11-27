@@ -12,32 +12,26 @@ import java.util.*;
  *
  * @author k79patel
  */
-/*
- * Aggregates the Shipment Details:
- * Priority
- * Shipper
- * 
- * Contain all order details:
- * Order Number
- * Weight
- * Shipping Priority
- * 
- * 
- * For Show:
- * Name
- * Shipment Details
- * Time
- * Expected Delivery
- * 
- * 
- * 
- *
- */
+
 
 
 public class Order {
     /**
      * OVERVIEW: Provides a basic structure for orders and all its parameters. 
+     * 
+     * Abstraction Function: An Order that represents key information for Tracking, Canceling
+     * and Shipping Purposes. Of course, there are two levels of detail, a simple level and an indepth level.
+     * The simply details will be provided with the new toString while the indepth details will be provided with
+     * ShippingDetails();
+     * For ex: Name(String), Location(String), Order #(Int), etc, is an Order with some Key info.
+     * The implementation involves a multitude of variables from Type Int, String, to Date, and a Priority Object.
+     * The functions are setShip (Set Shipment Provider), setPriority (Set Shipment Priority), and other various 
+     * functions that assist in maintaining an order. 
+     * 
+     * 
+     * Rep Invariant: The Order # of each object must be unique, and there must be a valid Priority for each
+     * object. 
+     * 
      */
     private static int count;
     private int orderNumber;
@@ -141,9 +135,11 @@ public class Order {
     }
     
         
+    
     protected void ShippingDetails() {  
         /**
-        * EFFECTS: Combines all the information of a specific order and prints it. 
+        * EFFECTS: Combines all the information of a specific order and prints it. Implements the abstraction function
+        * It provides in-Depth details.
         */
  
         System.out.println("Order Date: " + date);
@@ -159,6 +155,19 @@ public class Order {
         
     }
     
+    @Override
+    public String toString() {
+        /*
+        *Effects: Returns a simple toString representation of an Order, it implements the abstraction function.
+        *Note: It only prints basic details.
+        */
+        String out = "";
+        out = out + "\nOrder Date: " + date;
+        out = out + "\nItem #" + itemNumber;
+        out = out + "\nName: " + name;
+        out = out + "\nAddress: " + location;
+        return out;
+    }
 
 
 }

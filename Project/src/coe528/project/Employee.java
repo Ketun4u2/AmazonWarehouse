@@ -10,15 +10,20 @@ import java.util.Scanner;
  * @author k79patel
  */
 /*
- * View Pending Orders
- * Creates Shipments
- *
- * MAKE getOrderNumber and getPriority
+ * 
  */
 
 public class Employee {
     /**
      * OVERVIEW: This class provides all the functions for employee like viewing pending orders and then assigning their shipper appropriately. 
+     *
+     *
+     * Abstraction Function: A list that represents all the pending and shipped Orders given
+     * the arraylist containing all the orders. The implementation uses the Arraylist found 
+     * in the Admin class, and strings obtained from the Order Class. Naturally, the abstraction function
+     * implementation is found in the Order Class.
+     * 
+     * Rep Invariant: Same as that of Admin class.
      */
     private static Scanner input = new Scanner(System.in);
     private static String ship;
@@ -83,7 +88,8 @@ public class Employee {
         /**
         * REQUIRES:
         * MODIFIES:
-        * EFFECTS: Just displays the available shipping methods for employee to see. 
+        * EFFECTS: Just displays the available shipping methods for employee to see, along with the respective Orders
+        * placed under the Shippers.
         */
         String oPri1, oStat1; 
         

@@ -12,27 +12,22 @@ import java.util.*;
  * @author k79patel
  */
 
-/*
- * This is the mother container for the shipping companies
- * Ex: Fed EX, UPS...
- * 
- * Contains:
- * Time to Ship
- * 
- */
 public abstract class Shipper {
     /**
-     * OVERVIEW: This abstract class states all the methods required for each shipping company and it assigns each order its shipping company. 
+     * OVERVIEW: This abstract class states all the methods required for each shipping company and it assigns each order a shipping company. 
+     *
+     *
      */
+    
     //Requires: All subclasses declare a value for ExpShip. This is the
-    //Shipping times of the provide. Very Important
+    //shipping time of the provider. Very Important
     protected int ExpShip = 0;   
     
-    private GregorianCalendar shiptime;
+    private GregorianCalendar shiptime;         //A Calender
     private GregorianCalendar arritime;
 
-    private String name ;           //A Show Variable
-    private String location;        //Another Show
+    private String name ;           
+    private String location;       
 
 
     protected Shipper(String name, String location, int ExpS) {
@@ -50,7 +45,6 @@ public abstract class Shipper {
         
     }
 
-    //The actual Time for specific package
     protected String ETA() {
         /**
         * REQUIRES:   
@@ -65,21 +59,13 @@ public abstract class Shipper {
     
     
     protected String ShipmentCreated() {
+        /*
+         * Effects: Returns Date Shipment was Created. 
+        */
         return "" + shiptime.getTime();
     }
 
+    //To be implemented by the Shipment Providers, naturally. 
     protected abstract String shipperName();
 
-
-
 }
-
-    //Extras
-
-//What are the expected Shipping times? Just a String Representation
-//Just a general representation, should be static in the concrete class
-//abstract static shippingtimes()
-//Of course java doesn't allow abstract static methods, so everyone should just know
-//that the children need a concrete implementation of this.
-
-

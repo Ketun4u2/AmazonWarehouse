@@ -31,7 +31,7 @@ package coe528.project;
 
     @Override
     protected String priorityName() {
-        return "2Days";
+        return "TwoDays";
     }
 
     @Override

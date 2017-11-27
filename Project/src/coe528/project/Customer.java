@@ -11,17 +11,22 @@ import java.util.Scanner;
  * @author k79patel
  */
 /*
- * Makes Order
- * Views Order
- * Cancel Order
- * 
  */
 
 public class Customer {
      /**
      * OVERVIEW: This class provides with all the methods for customer to create a new order and view the status of their previous order.
+     * Also allows the customer to cancel Order.
+     * 
+     * Abstraction Function: The information about a specific Order is displayed in more detail.
+     * For example, given any order number, details such as shipment provider, time of expected delivery, etc
+     * is displayed. This class allows creating new Orders and adding them to the Orders List in Admin class, it
+     * allows deletion and viewing of Orders. The actual abstraction is found in the Order Class. 
+     * 
+     * Rep Invariant: Same as that of Admin class.
      */
-  //  private static Scanner input = new Scanner(System.in);
+    
+
     private static String s, oNum;
     private static int i;
     private static Scanner input = new Scanner(System.in);
@@ -112,4 +117,9 @@ public class Customer {
 
     }
 
+    
+    public static boolean repOK() {
+        return Admin.repOK();
+    }
+    
 }
