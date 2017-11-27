@@ -45,8 +45,8 @@ public class OrderTest {
         //Since the requirement states that the Priority must be one of the specified Priorities
         //We can test changing priority from any of the specified ones.
         Order test4 = new Order(12, "SampleN", "SampleA", "Standard");
-        test4.setPriority("2Days");
-        assertEquals(test4.getPriority(), "2Days");
+        test4.setPriority("TwoDays");
+        assertEquals(test4.getPriority(), "TwoDays");
 
         //While the ability to change priority is possible,
         // it isn't entirely logical nor is it an option in the actual complied code.
@@ -77,7 +77,7 @@ public class OrderTest {
         //However, the one thing about Order number is it has to be unique. To test
         //this we can use 2 test cases to ensure that both of these are unique.
         //This test isn't exhaustive but it should be enough.
-        Order test6 = new Order(21, "Kim", "Toronto", "2Days");
+        Order test6 = new Order(21, "Kim", "Toronto", "TwoDays");
         assertEquals(test6.getOrderNumber(), 1);
         Order test7 = new Order(43, "Jack", "Beanstock", "SameDay");
         assertEquals(test7.getOrderNumber(), 2);
@@ -122,14 +122,7 @@ public class OrderTest {
      */
     @Test
     public void testETA() {
-        System.out.println("ETA");
-        Order instance = null;
-        String expResult = "";
-        String result = instance.ETA();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-
+        System.out.println("To be implemented");             
     }
 
     /**
@@ -139,32 +132,7 @@ public class OrderTest {
      */
     @Test
     public void testShipmentCreated() {
-
-        System.out.println("ShipmentCreated");
-        Order instance = null;
-        String expResult = "";
-        String result = instance.ShipmentCreated();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-
-    }
-
-    /**
-     *
-     * Test of ShippingDetails method, of class Order.
-     *
-     */
-    @Test
-    public void testShippingDetails() {
-
-        System.out.println("ShippingDetails");
-        Order instance = null;
-        instance.ShippingDetails();
-
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-
+        System.out.println("To be implemented");
     }
 
 }

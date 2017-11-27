@@ -37,8 +37,10 @@ public class Customer {
         String name, location, pri;
         //Display UI to create an order by customer
         System.out.println("Please enter your item number:");
+        System.out.println("...just FYI, it doesn't have to mean anything...");
+              
         itemNum = input.nextInt();
-        System.out.println("Please enter customer name:");
+        System.out.println("Please enter name:");
         name = input.next();
         System.out.println("Please enter shipping location:");
         location = input.next();
@@ -47,6 +49,8 @@ public class Customer {
         System.out.println("2Days");
         System.out.println("Standard");
         System.out.println("Free");
+        System.out.println("Please, only one of the above given options. (Also, Match Cases, Thanks!)");
+       
         pri = input.next();
         
         //Create a new order
