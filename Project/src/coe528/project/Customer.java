@@ -46,7 +46,7 @@ public class Customer {
         location = input.next();
         System.out.println("Please enter shipping priority from below:");
         System.out.println("SameDay");
-        System.out.println("2Days");
+        System.out.println("TwoDays");
         System.out.println("Standard");
         System.out.println("Free");
         System.out.println("Please, only one of the above given options. (Also, Match Cases, Thanks!)");
