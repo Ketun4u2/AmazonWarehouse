@@ -40,7 +40,7 @@ public abstract class Shipper {
         
         
         shiptime = new GregorianCalendar();
-        arritime = shiptime;
+        arritime = new GregorianCalender();
         arritime.add(GregorianCalendar.HOUR, ExpS);
         
     }
